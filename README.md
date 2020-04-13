@@ -1,4 +1,5 @@
 ## App Feed Marvel
+Consumindo api básica da marvel
 
 ## Sobre o app
 
