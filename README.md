@@ -1,6 +1,4 @@
-# desafio-android-diego-souza
-
-App Feed Marvel
+## App Feed Marvel
 
 ## Sobre o app
 
