@@ -67,6 +67,7 @@ class CharactersAdapter(
             nome.text = listResult.name
             Glide.with(itemView.context)
                 .load(listResult.thumbnail.path + "." + listResult.thumbnail.extension)
+                .override(itemView.width)
                 .into(img)
         }
     }

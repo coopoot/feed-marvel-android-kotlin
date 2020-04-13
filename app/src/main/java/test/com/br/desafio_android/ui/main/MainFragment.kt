@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.main_fragment.*
 import retrofit2.Call
@@ -26,8 +25,6 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var viewModel: CharactersViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,7 +34,6 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(CharactersViewModel::class.java)
         this.loadCharacters()
     }
 
@@ -59,6 +55,7 @@ class MainFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<ResponseCharacters>, t: Throwable) {
+                imgNotfoudMain.visibility = View.VISIBLE
                 progressBar.visibility = View.GONE
             }
         })

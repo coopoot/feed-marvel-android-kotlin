@@ -76,11 +76,10 @@ class CharactersComicsAdapter(
             try {
                 Glide.with(itemView.context)
                     .load(listResult.images[0].path + "." + listResult.images[0].extension)
+                    .override(itemView.width)
                     .into(img)
             } catch (exception: Exception) {
-
             }
-
         }
     }
 }

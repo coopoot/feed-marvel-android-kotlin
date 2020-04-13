@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.comics_fragment.*
 import retrofit2.Call
@@ -25,8 +24,6 @@ class ComicsFragment : Fragment() {
         fun newInstance() = ComicsFragment()
     }
 
-    private lateinit var viewModel: ComicsViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,7 +33,6 @@ class ComicsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(ComicsViewModel::class.java)
         val id = arguments!!.getString("id")
         this.loadCharacters(id!!)
     }
@@ -59,6 +55,7 @@ class ComicsFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<ResponseCharacters>, t: Throwable) {
+                imgNotfound.visibility = View.VISIBLE
                 progressBarComics.visibility = View.GONE
             }
         })

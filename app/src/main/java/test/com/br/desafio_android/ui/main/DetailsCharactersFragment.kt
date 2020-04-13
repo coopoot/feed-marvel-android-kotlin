@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.details_characters_fragment.*
 import test.com.br.desafio_android.R
@@ -16,8 +15,6 @@ class DetailsCharactersFragment : Fragment() {
         fun newInstance() = DetailsCharactersFragment()
     }
 
-    private lateinit var viewModel: DetailsCharactersViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,7 +24,6 @@ class DetailsCharactersFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(DetailsCharactersViewModel::class.java)
 
         val id = arguments!!.getString("id")
         val name = arguments!!.getString("name")
