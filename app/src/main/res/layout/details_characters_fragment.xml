@@ -10,7 +10,7 @@
         android:id="@+id/imgDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_foreground"
+        app:srcCompat="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +47,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:src="@drawable/ic_sales"
+        app:srcCompat="@drawable/ic_sales"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:focusable="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>
